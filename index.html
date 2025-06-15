@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varsha Patel - Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+    }
+    nav {
+      background-color: #2c3e50;
+      padding: 20px 40px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      left: 200px;
+      right: 0;
+      z-index: 1;
+      transition: all 0.3s ease-in-out;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #34495e;
+      height: 100vh;
+      padding-top: 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      color: #fff;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .photo-container {
+      margin-bottom: 20px;
+    }
+    .photo-container img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+    .sidebar h3 {
+      padding: 15px;
+      margin: 0;
+      border-bottom: 1px solid #2c3e50;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+    }
+    .sidebar ul li {
+      padding: 12px 18px;
+      transition: background-color 0.3s ease;
+    }
+    .sidebar ul li:hover {
+      background-color: #2c3e50;
+      cursor: pointer;
+    }
+    .main-content {
+      margin-left: 200px;
+      padding-top: 100px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .tab {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="photo-container">
+      <img src="your-photo.jpg" alt="Your Photo">
+    </div>
+    <h3>Features</h3>
+    <ul>
+      <li onclick="showTab('homework')">My Homework</li>
+      <li onclick="showTab('businesswork')">My Business Work</li>
+      <li onclick="showTab('work')">My Work</li>
+      <li onclick="showTab('thirdwide')">3rd Wide Section</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <nav>
+      <a href="#" onclick="showTab('resume')">Resume</a>
+      <a href="#" onclick="showTab('hobbies')">Hobbies</a>
+      <a href="#" onclick="showTab('notes')">Notes</a>
+      <a href="#" onclick="showTab('social')">Social</a>
+      <a href="#" onclick="showTab('about')">About Me</a>
+      <a href="#" onclick="showTab('projects')">Projects</a>
+      <a href="#" onclick="showTab('contact')">Contact</a>
+    </nav>
+
+    <div class="container">
+      <div id="resume" class="tab active">
+        <h2>Resume</h2>
+        <p>Java Developer with 4 years of experience, skilled in AWS, DevOps, and IT administration.</p>
+      </div>
+
+      <div id="hobbies" class="tab">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Reading tech blogs</li>
+          <li>Listening to music</li>
+          <li>Sketching</li>
+          <li>Exploring cloud tools</li>
+        </ul>
+      </div>
+
+      <div id="notes" class="tab">
+        <h2>Notes</h2>
+        <p>These are my learning notes from AWS, DevOps, and Linux commands.</p>
+        <ul>
+          <li>AWS EC2 Setup</li>
+          <li>Docker & Jenkins pipelines</li>
+          <li>Linux one-liners</li>
+        </ul>
+      </div>
+
+      <div id="social" class="tab">
+        <h2>Social Profiles</h2>
+        <ul>
+          <li><a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div id="about" class="tab">
+        <h2>About Me</h2>
+        <p>I’m Varsha Patel, passionate about cloud computing and DevOps automation. I'm exploring the tech space and love sharing my knowledge through notes and blogs.</p>
+      </div>
+
+      <div id="homework" class="tab">
+        <h2>My Homework</h2>
+        <p>This section contains personal learning tasks and assignments.</p>
+      </div>
+
+      <div id="businesswork" class="tab">
+        <h2>My Business Work</h2>
+        <p>This section showcases tasks and notes related to your business ideas and progress.</p>
+      </div>
+
+      <div id="work" class="tab">
+        <h2>My Work</h2>
+        <p>This section highlights your projects, job responsibilities, and accomplishments.</p>
+      </div>
+
+      <div id="thirdwide" class="tab">
+        <h2>3rd Wide Section</h2>
+        <p>This is a placeholder for additional custom content you wish to add.</p>
+      </div>
+
+      <div id="projects" class="tab">
+        <h2>Projects</h2>
+        <p>Here you can showcase major projects, source code links, demos, etc.</p>
+      </div>
+
+      <div id="contact" class="tab">
+        <h2>Contact Me</h2>
+        <p>Email: yourname@example.com</p>
+        <p>Phone: +91-XXXXXXXXXX</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
